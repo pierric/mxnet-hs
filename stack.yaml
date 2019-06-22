@@ -4,13 +4,12 @@ packages:
 - operators
 extra-deps:
 - ../tuple-ops
+- ../type-combinators
 - c2hs-extra-0.1.0.1
-- git: https://github.com/kylcarte/type-combinators.git
-  commit: 071942730b6bb34990d37e1a25236382cf0dcbc6
 - git: https://github.com/pierric/haskell-src-exts.git
   commit: f75a5dbe2ec9fbc67df0936333e0665b033f9e22
 extra-include-dirs:
 - /home/jiasen/dschungel/incubator-mxnet/include
-- /home/jiasen/dschungel/incubator-mxnet/nnvm/include
+- /home/jiasen/dschungel/incubator-mxnet/3rdparty/tvm/nnvm/include
 extra-lib-dirs:
 - /home/jiasen/dschungel/incubator-mxnet/lib
