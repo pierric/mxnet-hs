@@ -486,19 +486,6 @@ type CustomOpCreateFunc           = CString -> CInt -> Ptr (Ptr CUInt) -> Ptr CI
 type CustomFunctionBwdFunc        = CInt -> Ptr (Ptr NDArrayHandle) -> Ptr CInt -> Ptr CInt -> CInt -> Ptr () -> IO CInt
 type CustomFunctionDelFunc        = Ptr () -> IO CInt
 
-foreign import ccall "wrapper" mkCustomOpPropCreator    :: CustomOpPropCreator -> IO (FunPtr CustomOpPropCreator)
-foreign import ccall "wrapper" mkCustomOpFBFunc         :: CustomOpFBFunc -> IO (FunPtr CustomOpFBFunc)
-foreign import ccall "wrapper" mkCustomOpDelFunc        :: CustomOpDelFunc -> IO (FunPtr CustomOpDelFunc)
-foreign import ccall "wrapper" mkCustomOpListFunc       :: CustomOpListFunc -> IO (FunPtr CustomOpListFunc)
-foreign import ccall "wrapper" mkCustomOpInferShapeFunc :: CustomOpInferShapeFunc -> IO (FunPtr CustomOpInferShapeFunc)
-foreign import ccall "wrapper" mkCustomOpInferStorageTypeFunc :: CustomOpInferStorageTypeFunc -> IO (FunPtr CustomOpInferStorageTypeFunc)
-foreign import ccall "wrapper" mkCustomOpBackwardInferStorageTypeFunc :: CustomOpBackwardInferStorageTypeFunc -> IO (FunPtr CustomOpBackwardInferStorageTypeFunc)
-foreign import ccall "wrapper" mkCustomOpInferTypeFunc  :: CustomOpInferTypeFunc -> IO (FunPtr CustomOpInferTypeFunc)
-foreign import ccall "wrapper" mkCustomOpBwdDepFunc     :: CustomOpBwdDepFunc -> IO (FunPtr CustomOpBwdDepFunc)
-foreign import ccall "wrapper" mkCustomOpCreateFunc     :: CustomOpCreateFunc -> IO (FunPtr CustomOpCreateFunc)
-foreign import ccall "wrapper" mkCustomFunctionBwdFunc  :: CustomFunctionBwdFunc -> IO (FunPtr CustomFunctionBwdFunc)
-foreign import ccall "wrapper" mkCustomFunctionDelFunc  :: CustomFunctionDelFunc -> IO (FunPtr CustomFunctionDelFunc)
-
 {#
 fun MXCustomOpRegister as mxCustomOpRegister_
     {
